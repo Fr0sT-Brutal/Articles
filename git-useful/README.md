@@ -1,13 +1,13 @@
 Git useful stuff
 ================
 
-Here are some customizations, scripts and other stuff which I use with Git. OS Windows.
+Here are some customizations, scripts and other stuff which I use with Git. All examples are for OS Windows but could be adopted for Linux as well.
 
 
 Universal fetch
 ---------------
 
-Being launched from a Git repo directory, script performs fetch from remote no matter it is Git or SVN repo. Save the scrit as `gitfetch.bat` and place it to `%Git%\bin` to get access to it from any directory (assuming the `%Git%\bin` is in your PATH).
+Being launched from a Git repo directory, the script performs fetch from remote no matter it is Git or SVN repo. Save the scrit as `gitfetch.bat` and place it to `%Git%\bin` to get access to it from any directory (assuming the `%Git%\bin` is in your PATH).
 
 ```batch
 :: Universal (Git/SVN) fetch command
@@ -42,3 +42,12 @@ BFG tool — removing files from repo history
 ```
 
 And the call will look like `D:\Coding\Repo>bfg -D "*.res"`
+
+I also incapsulated two commands for refreshing the repo after file removing into a script.
+
+```batch
+@git reflog expire --expire=now --all
+@git gc --prune=now --aggressive
+```
+
+I called it `prune.bat` and saved in `%Git%\bin`.
