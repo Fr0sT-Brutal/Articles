@@ -72,7 +72,7 @@ Save the file and close it.
 Step 2.2.2
 ----------
 
-Proceed to `{git_dir}\bin` directory, create text file there, name it `git-credential-repeater` (no extension!) and insert the following lines:
+Proceed to `{git_dir}\bin` directory (*also see note below*)), create text file there, name it `git-credential-repeater` (no extension!) and insert the following lines:
 
 ```bash
 #! /bin/sh
@@ -85,6 +85,10 @@ if [ $2 = "get" ]; then
 fi
 ```
 Save it and close. As you can see, it's our trivial repeater that returns something transferred in 1st parameter (and it will be a password) if command transferred in 2nd parameter is `get`.
+
+**Important note**
+
+Since version 2.x Git (at least Windows build) stopped finding scripts placed in `{git_dir}\bin` and `{git_dir}\cmd`. I had to place it in `{git_dir}\mingw32\libexec\git-core` to get it working.
 
 Step 2.2.3
 ----------
