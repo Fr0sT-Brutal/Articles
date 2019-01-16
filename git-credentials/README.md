@@ -72,7 +72,7 @@ Save the file and close it.
 Step 2.2.2
 ----------
 
-Proceed to `{git_dir}\bin` directory (*also see note below*)), create text file there, name it `git-credential-repeater` (no extension!) and insert the following lines:
+Proceed to `{git_dir}\bin` directory (*also see note below*), create text file there, name it `git-credential-repeater` (no extension!) and insert the following lines:
 
 ```bash
 #! /bin/sh
